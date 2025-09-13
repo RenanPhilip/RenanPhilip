@@ -13,27 +13,12 @@ Minha experiência inclui liderar migrações para GA4, padronizar arquiteturas 
     src="https://github-readme-stats.vercel.app/api?username=RenanPhilip&show_icons=true&theme=tokyonight&locale=pt-br" 
   />
 
-<<<<<<< HEAD
 <img 
       align="rigth" 
       alt="GitHub Stats" 
       height="200" 
       src="https://github-readme-stats.vercel.app/api/top-langs/?username=RenanPhilip&theme=tokyonight&layout=compact&custom_title=Tecnologias&langs_count=9" 
   />
-=======
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
-add a new line
--->
-# **RENAN PHILIPE ROCHA RIBEIRO**  
-## **Consultor Web Analytics | Especialista em Tagueamento e Automatizações**  
->>>>>>> a0bbd03ea603df1024311659843bd9a1fb0274ea
 
 </p>  
 

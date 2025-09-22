@@ -22,6 +22,7 @@ Minha experiência inclui liderar migrações para GA4, padronizar arquiteturas 
 
 </p>  
 
+<br><br>  
 ## Especialista em Web Analytics & Data Tracking <br> Google Tag Manager (GTM) | GA4 | BI | Automação & Data Layer
 
  ### **CONTATO**

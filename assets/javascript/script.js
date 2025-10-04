@@ -1,4 +1,4 @@
-// Navbar
+// Navbar Toggle
 document.addEventListener("DOMContentLoaded", () => {
 
     const toggle = document.getElementById("menu-toggle");

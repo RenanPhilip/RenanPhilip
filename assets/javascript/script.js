@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const alvo = document.querySelector("#nome");
+  const e = document.querySelector("#nome");
   if (alvo) {
-    alvo.scrollIntoView({ behavior: "smooth", block: "start" });
+    e.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 });

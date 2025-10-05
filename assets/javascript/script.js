@@ -26,7 +26,8 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Name Smooth
-document.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("load", () => {
+    console.log('window load')
     const alvo = document.querySelector("#nome");
     if (alvo) {
         alvo.scrollIntoView({ behavior: "smooth", block: "start" });

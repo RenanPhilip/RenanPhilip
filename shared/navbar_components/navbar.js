@@ -1,11 +1,16 @@
 async function loadNavbar() {
   try {
     // Detecta ambiente (local vs produção)
-    const isLocal = location.host.includes(':5500') || location.hostname === 'localhost';
-    const basePath = isLocal ? '.' : 'https://renanphilip.github.io';
+    const isLocal = location.hostname.includes('localhost') || location.port === '5500';
+    const basePath = isLocal 
+      ? './shared/navbar_components/'
+      : 'https://renanphilip.github.io/shared/navbar_components/';
 
+    import(`${basePath}navbar.js`)
+      .then(() => console.log('Navbar carregada com base dinâmica'));
+    
     // Carrega HTML da navbar
-    const navbar_html = await fetch(`${basePath}/shared/navbar_components/navbar.html`);
+    const navbar_html = await fetch(`${basePath}navbar.html`);
     if (!navbar_html.ok) throw new Error(`Erro HTTP: ${navbar_html.status}`);
     const html = await navbar_html.text();
 
@@ -18,7 +23,7 @@ async function loadNavbar() {
     // Injeta CSS da navbar
     const css_link = document.createElement('link');
     css_link.rel = 'stylesheet';
-    css_link.href = `${basePath}/shared/navbar_components/navbar.css`;
+    css_link.href = `${basePath}navbar.css`;
     
     document.head.appendChild(css_link);
 

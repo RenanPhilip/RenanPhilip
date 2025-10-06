@@ -22,7 +22,7 @@ async function loadNavbar() {
         ? window.__NAVBAR_BASE__
         : "https://renanphilip.github.io/RenanPhilip/shared/navbar_components/";
 
-    console.log("Base path:", basePath);
+    console.log(`isLocal ${isLocal}, Base Path ${basePath}`);
 
     // Evita carregar duas vezes
     if (document.querySelector('header.navbar')) {

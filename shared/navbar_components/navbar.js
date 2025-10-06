@@ -1,47 +1,42 @@
 async function loadNavbar() {
   try {
-    // Detecta ambiente (local vs produção)
     const isLocal = location.hostname.includes('localhost') || location.port === '5500';
-    const basePath = isLocal 
+    const basePath = isLocal
       ? './shared/navbar_components/'
-      : 'https://renanphilip.github.io/shared/navbar_components/';
+      : 'https://renanphilip.github.io/RenanPhilip/shared/navbar_components/';
 
-    import(`${basePath}navbar.js`)
-      .then(() => console.log('Navbar carregada com base dinâmica'));
-    
-    // Carrega HTML da navbar
+    // Aguarda o JS da navbar
+    await import(`${basePath}navbar.js`);
+
+    // Busca o HTML
     const navbar_html = await fetch(`${basePath}navbar.html`);
     if (!navbar_html.ok) throw new Error(`Erro HTTP: ${navbar_html.status}`);
     const html = await navbar_html.text();
 
-    // Cria elemento temporário e extrai o header
+    // Cria elemento e injeta
     const temp = document.createElement('div');
     temp.innerHTML = html;
     const navbar = temp.querySelector('header');
-    if (!navbar) throw new Error("Navbar não encontrada no HTML");
+    if (!navbar) throw new Error("Navbar não encontrada");
 
-    // Injeta CSS da navbar
+    // Injeta o CSS
     const css_link = document.createElement('link');
     css_link.rel = 'stylesheet';
     css_link.href = `${basePath}navbar.css`;
-    
     document.head.appendChild(css_link);
 
-    // Insere a navbar no topo do body
+    // Insere no topo
     document.body.prepend(navbar);
-    console.log("Navbar carregada.");
+    console.log("Navbar adicionada ao DOM");
 
-    // Inicializa o menu hamburguer
+    // Inicializa interações
     setupNavbarToggle();
 
-    // Após renderizar a navbar, faz o scroll para o conteúdo da página
+    // Rola até o próximo elemento
     requestAnimationFrame(() => {
       const nextElement = navbar.nextElementSibling;
       if (nextElement) {
-        nextElement.scrollIntoView({
-          behavior: "smooth",
-          block: "start"
-        });
+        nextElement.scrollIntoView({ behavior: "smooth", block: "start" });
       }
     });
 
@@ -50,7 +45,7 @@ async function loadNavbar() {
   }
 }
 
-// Comportamento do menu responsivo
+// Controle de menu responsivo
 function setupNavbarToggle() {
   const toggle = document.getElementById("menu-toggle");
   const menu = document.getElementById("menu");
@@ -75,5 +70,5 @@ function setupNavbarToggle() {
   });
 }
 
-// Executa automaticamente
-loadNavbar();
+// Chamada final
+loadNavbar().then(() => console.log("Navbar totalmente carregada ✅"));

@@ -6,11 +6,23 @@ async function loadNavbar() {
       location.protocol === 'file:' ||
       location.port === '5500';
 
-    const basePath = isLocal
-      ? './shared/navbar_components/'
-      : 'https://renanphilip.github.io/RenanPhilip/shared/navbar_components/';
+    // tenta carregar env.js (só existe no ambiente local)
+    if (isLocal) {
+      try {
+        await import("./env.js");
+        console.log("env.js detectado — usando base local");
+      } catch {
+        console.warn("env.js não encontrado — usando caminho remoto");
+      }
+    }
 
-    console.log('Ambiente:', isLocal ? 'Local' : 'Online');
+    // define basePath conforme o ambiente
+    const basePath =
+      (typeof window.__NAVBAR_BASE__ !== "undefined")
+        ? window.__NAVBAR_BASE__
+        : "https://renanphilip.github.io/RenanPhilip/shared/navbar_components/";
+
+    console.log("Base path:", basePath);
 
     // Evita carregar duas vezes
     if (document.querySelector('header.navbar')) {
@@ -74,4 +86,4 @@ function setupNavbarToggle() {
 }
 
 // Chamada final
-loadNavbar().then(() => console.log("Navbar carregada"));
+loadNavbar();

@@ -11,8 +11,21 @@ html, body { height: 100%; }
   padding: 14px 24px;
   background: #1e293b;
   border-radius: 12px;
-  margin-bottom: 24px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+
+  /* ==========================
+     Navbar fixa no topo
+     ========================== */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* Empurra automaticamente todo o resto do conteúdo para baixo */
+body > *:not(.navbar) {
+  margin-top: 120px; /* ajuste conforme a altura real da navbar */
 }
 
 .navbar .logo a {
@@ -108,4 +121,3 @@ html, body { height: 100%; }
     display: block;
   }
 }
-/* -------------- Fim da navbar -------------- */

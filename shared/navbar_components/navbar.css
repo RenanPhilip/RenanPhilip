@@ -1,6 +1,14 @@
 /* ---------- Reset ---------- */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html, body { height: 100%; }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
 
 /* ---------- Navbar ---------- */
 .navbar {
@@ -12,7 +20,7 @@ html, body { height: 100%; }
   background: #1e293b;
   border-radius: 12px;
   margin-bottom: 24px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
 }
 
 .navbar .logo a {
@@ -22,6 +30,7 @@ html, body { height: 100%; }
   text-decoration: none;
   transition: color .2s;
 }
+
 .navbar .logo a:hover {
   color: #38bdf8;
 }
@@ -45,7 +54,8 @@ html, body { height: 100%; }
   font-size: 0.95rem;
   font-weight: 600;
   transition: background .2s ease, transform .2s ease;
-  white-space: nowrap; /* evita quebra estranha */
+  white-space: nowrap;
+  /* evita quebra estranha */
 }
 
 .menu a i {
@@ -67,11 +77,15 @@ html, body { height: 100%; }
   font-size: 1.5rem;
   cursor: pointer;
   position: relative;
-  z-index: 10000; /* garante que fique clicável */
+  z-index: 10000;
+  /* garante que fique clicável */
   padding: 6px;
   border-radius: 8px;
 }
-.menu-toggle:hover { color: #38bdf8; }
+
+.menu-toggle:hover {
+  color: #38bdf8;
+}
 
 /* ---------- Responsivo Navbar ---------- */
 @media (max-width: 768px) {
@@ -80,13 +94,16 @@ html, body { height: 100%; }
     flex-direction: column;
     position: absolute;
     top: 90px;
-    right: 0;              /* gruda no canto direito */
-    width: 100%;           /* ocupa toda a largura */
-    max-width: 220px;      /* mas não passa de 220px */
+    right: 0;
+    /* gruda no canto direito */
+    width: 100%;
+    /* ocupa toda a largura */
+    max-width: 220px;
+    /* mas não passa de 220px */
     padding: 12px;
     border-radius: 12px;
     background: #1e293b;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
     z-index: 9990;
   }
 
@@ -95,17 +112,20 @@ html, body { height: 100%; }
   }
 
   .menu a {
-    justify-content: flex-start; /* ícone + texto alinhados à esquerda */
+    justify-content: flex-start;
+    /* ícone + texto alinhados à esquerda */
     font-size: 0.9rem;
     padding: 10px 12px;
   }
 
   .menu a i {
-    font-size: 0.9rem; /* ícones menores */
+    font-size: 0.9rem;
+    /* ícones menores */
   }
 
   .menu-toggle {
     display: block;
   }
 }
+
 /* -------------- Fim da navbar -------------- */

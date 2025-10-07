@@ -10,8 +10,10 @@ body {
   height: 100%;
 }
 
-/* ---------- Navbar ---------- */
-.navbar {
+/* ---------- Navbar Container ---------- */
+/* Garante que a navbar ocupe toda a largura e empurre o conteúdo */
+.navbar,
+#navbar {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -21,9 +23,20 @@ body {
   border-radius: 12px;
   margin-bottom: 24px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  position: relative;
 }
 
-.navbar .logo a {
+/* ---------- Logo ---------- */
+.navbar-logo,
+.navbar .logo,
+.logo {
+  flex-shrink: 0;
+}
+
+.navbar-logo a,
+.navbar .logo a,
+.logo a {
   color: #60a5fa;
   font-weight: 700;
   font-size: 1.3rem;
@@ -31,17 +44,23 @@ body {
   transition: color .2s;
 }
 
-.navbar .logo a:hover {
+.navbar-logo a:hover,
+.navbar .logo a:hover,
+.logo a:hover {
   color: #38bdf8;
 }
 
-/* Links do menu (desktop) */
+/* ---------- Menu Links (desktop) ---------- */
+.navbar-menu,
+.navbar .menu,
 .menu {
   display: flex;
   gap: 14px;
   flex-wrap: wrap;
 }
 
+.navbar-menu a,
+.navbar .menu a,
 .menu a {
   display: flex;
   align-items: center;
@@ -55,20 +74,25 @@ body {
   font-weight: 600;
   transition: background .2s ease, transform .2s ease;
   white-space: nowrap;
-  /* evita quebra estranha */
 }
 
+.navbar-menu a i,
+.navbar .menu a i,
 .menu a i {
   font-size: 1rem;
 }
 
+.navbar-menu a:hover,
+.navbar .menu a:hover,
 .menu a:hover {
   background: #475569;
   transform: translateY(-3px);
   color: #38bdf8;
 }
 
-/* Botão hamburguer */
+/* ---------- Botão Hamburguer ---------- */
+.navbar-menu-toggle,
+.navbar .menu-toggle,
 .menu-toggle {
   display: none;
   background: none;
@@ -78,28 +102,28 @@ body {
   cursor: pointer;
   position: relative;
   z-index: 10000;
-  /* garante que fique clicável */
   padding: 6px;
   border-radius: 8px;
 }
 
+.navbar-menu-toggle:hover,
+.navbar .menu-toggle:hover,
 .menu-toggle:hover {
   color: #38bdf8;
 }
 
 /* ---------- Responsivo Navbar ---------- */
 @media (max-width: 768px) {
+  .navbar-menu,
+  .navbar .menu,
   .menu {
     display: none;
     flex-direction: column;
     position: absolute;
     top: 90px;
     right: 0;
-    /* gruda no canto direito */
     width: 100%;
-    /* ocupa toda a largura */
     max-width: 220px;
-    /* mas não passa de 220px */
     padding: 12px;
     border-radius: 12px;
     background: #1e293b;
@@ -107,25 +131,43 @@ body {
     z-index: 9990;
   }
 
+  .navbar-menu.show,
+  .navbar .menu.show,
   .menu.show {
     display: flex;
   }
 
+  .navbar-menu a,
+  .navbar .menu a,
   .menu a {
     justify-content: flex-start;
-    /* ícone + texto alinhados à esquerda */
     font-size: 0.9rem;
     padding: 10px 12px;
   }
 
+  .navbar-menu a i,
+  .navbar .menu a i,
   .menu a i {
     font-size: 0.9rem;
-    /* ícones menores */
   }
 
+  .navbar-menu-toggle,
+  .navbar .menu-toggle,
   .menu-toggle {
     display: block;
   }
+}
+
+/* ---------- Espaçamento do Body ---------- */
+/* Garante que o conteúdo principal fique abaixo da navbar */
+body {
+  padding: 20px;
+}
+
+/* Se a navbar estiver dentro de um header, garante o espaçamento */
+header.navbar,
+header#navbar {
+  margin-bottom: 24px;
 }
 
 /* -------------- Fim da navbar -------------- */

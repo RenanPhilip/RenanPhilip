@@ -42,8 +42,8 @@ async function loadNavbar() {
 }
 
 function setupNavbarToggle() {
-  const toggle = document.getElementById("menu-toggle");
-  const menu = document.getElementById("menu");
+  const toggle = document.getElementById("navbar-menu-toggle");
+  const menu = document.getElementById("navbar-menu");
   if (!toggle || !menu) return;
 
   toggle.addEventListener("click", (e) => {

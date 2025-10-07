@@ -1,6 +1,15 @@
 /* ---------- Reset ---------- */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html, body { height: 100%; }
+* { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+html, body { 
+  height: 100%; 
+  font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: #0f172a; /* fundo escuro */
+  color: #e2e8f0;      /* texto claro */
+}
 
 /* ---------- Navbar ---------- */
 .navbar {
@@ -8,26 +17,26 @@ html, body { height: 100%; }
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+
+  width: 100%;             /* ocupa toda a largura */
+  box-sizing: border-box;
+
   padding: 14px 24px;
   background: #1e293b;
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.5);
 
-  /* ==========================
-     Navbar fixa no topo
-     ========================== */
-  position: fixed;
+  position: sticky;        /* mantém no topo mas ainda ocupa espaço */
   top: 0;
-  left: 0;
-  width: 100%;
   z-index: 1000;
 }
 
-/* Empurra automaticamente todo o resto do conteúdo para baixo */
+/* Espaço abaixo da navbar para todo o conteúdo */
 body > *:not(.navbar) {
-  margin-top: 120px; /* ajuste conforme a altura real da navbar */
+  margin-top: 0; /* com sticky, já ocupa espaço, então margin mínima */
 }
 
+/* Logo */
 .navbar .logo a {
   color: #60a5fa;
   font-weight: 700;

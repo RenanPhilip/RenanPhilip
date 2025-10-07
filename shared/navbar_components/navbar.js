@@ -1,7 +1,7 @@
 async function loadNavbar() {
   try {
-    basePath = "https://renanphilip.github.io/RenanPhilip/shared/navbar_components/";
-    
+    basePath = "https://raw.githubusercontent.com/RenanPhilip/RenanPhilip/refs/heads/main/shared/navbar_components/";
+
     // Busca HTML
     const navbar_html = await fetch(`${basePath}navbar.html`);
     if (!navbar_html.ok) throw new Error(`Erro HTTP: ${navbar_html.status}`);

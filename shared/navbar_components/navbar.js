@@ -9,13 +9,16 @@ async function loadNavbar() {
 
     const temp = document.createElement("div");
     temp.innerHTML = html;
-    const navbar = temp.querySelector("header");
-    if (!navbar) throw new Error("Navbar não encontrada");
 
-    if (document.querySelector("header.navbar")) {
+    const existingNavbar = document.querySelector("#navbar");
+    if (existingNavbar) {
       console.warn("Navbar já existente, ignorando duplicação");
       return;
     }
+
+    // Injeta navbar carregada
+    document.body.prepend(navbar);
+
 
     // Injeta CSS
     const css_link = document.createElement("link");

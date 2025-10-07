@@ -1,7 +1,7 @@
 async function loadNavbar() {
   try {
     basePath = "https://renanphilip.github.io/RenanPhilip/shared/navbar_components/";
-    
+
     // Busca HTML
     const navbar_html = await fetch(`${basePath}navbar.html`);
     if (!navbar_html.ok) throw new Error(`Erro HTTP: ${navbar_html.status}`);
@@ -10,6 +10,7 @@ async function loadNavbar() {
     const temp = document.createElement("div");
     temp.innerHTML = html;
 
+    // Ignora carregamento da navbar caso ja exista
     const existingNavbar = document.querySelector("#navbar");
     if (existingNavbar) {
       console.warn("Navbar já existente, ignorando duplicação");
@@ -19,12 +20,14 @@ async function loadNavbar() {
     // Injeta navbar carregada
     document.body.prepend(navbar);
 
-
-    // Injeta CSS
-    const css_link = document.createElement("link");
-    css_link.rel = "stylesheet";
-    css_link.href = `${basePath}navbar.css`;
-    document.head.appendChild(css_link);
+    // Injeta CSS caso ainda nao exista
+    if (!document.getElementById("navbar-css")) {
+      const css_link = document.createElement("link");
+      css_link.rel = "stylesheet";
+      css_link.href = `${basePath}navbar.css`;
+      css_link.id = "navbar-css";
+      document.head.appendChild(css_link);
+    }
 
     // Adiciona ao DOM
     document.body.prepend(navbar);
@@ -47,8 +50,8 @@ function setupNavbarToggle() {
 
   document.addEventListener("click", (e) => {
     if (menu.classList.contains("show") &&
-        !menu.contains(e.target) &&
-        !toggle.contains(e.target)) {
+      !menu.contains(e.target) &&
+      !toggle.contains(e.target)) {
       menu.classList.remove("show");
     }
   });

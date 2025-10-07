@@ -55,6 +55,6 @@ function setupNavbarToggle() {
   });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("load", () => {
   loadNavbar();
 });

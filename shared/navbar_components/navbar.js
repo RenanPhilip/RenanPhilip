@@ -9,6 +9,8 @@ async function loadNavbar() {
 
     const navbar = document.createElement("header");
     navbar.innerHTML = html;
+    navbar.id = "navbar"; 
+    navbar.className = "navbar";
 
     // Ignora carregamento da navbar caso ja exista
     const existingNavbar = document.querySelector("#navbar")

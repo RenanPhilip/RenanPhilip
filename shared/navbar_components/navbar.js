@@ -7,11 +7,11 @@ async function loadNavbar() {
     if (!navbar_html.ok) throw new Error(`Erro HTTP: ${navbar_html.status}`);
     const html = await navbar_html.text();
 
-    const temp = document.createElement("div");
-    temp.innerHTML = html;
+    const navbar = document.createElement("div");
+    navbar.innerHTML = html;
 
     // Ignora carregamento da navbar caso ja exista
-    const existingNavbar = document.querySelector("#navbar");
+    const existingNavbar = document.querySelector("#navbar")
     if (existingNavbar) {
       console.warn("Navbar já existente, ignorando duplicação");
       return;
@@ -33,6 +33,7 @@ async function loadNavbar() {
     document.body.prepend(navbar);
     setupNavbarToggle();
     console.log("Navbar adicionada ao DOM");
+
   } catch (err) {
     console.error("Erro ao carregar navbar:", err);
   }

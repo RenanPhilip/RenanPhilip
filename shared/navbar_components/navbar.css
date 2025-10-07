@@ -1,15 +1,6 @@
 /* ---------- Reset ---------- */
-* { 
-  box-sizing: border-box; 
-  margin: 0; 
-  padding: 0; 
-}
-html, body { 
-  height: 100%; 
-  font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  background: #0f172a; /* fundo escuro */
-  color: #e2e8f0;      /* texto claro */
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
 
 /* ---------- Navbar ---------- */
 .navbar {
@@ -17,26 +8,13 @@ html, body {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-
-  width: 100%;             /* ocupa toda a largura */
-  box-sizing: border-box;
-
   padding: 14px 24px;
   background: #1e293b;
   border-radius: 12px;
+  margin-bottom: 24px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.5);
-
-  position: sticky;        /* mantém no topo mas ainda ocupa espaço */
-  top: 0;
-  z-index: 1000;
 }
 
-/* Espaço abaixo da navbar para todo o conteúdo */
-body > *:not(.navbar) {
-  margin-top: 0; /* com sticky, já ocupa espaço, então margin mínima */
-}
-
-/* Logo */
 .navbar .logo a {
   color: #60a5fa;
   font-weight: 700;
@@ -130,3 +108,4 @@ body > *:not(.navbar) {
     display: block;
   }
 }
+/* -------------- Fim da navbar -------------- */

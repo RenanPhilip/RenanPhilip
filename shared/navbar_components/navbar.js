@@ -30,7 +30,7 @@ async function loadNavbar() {
     }
 
     // Adiciona ao DOM
-    document.body.prepend(navbar);
+    // document.body.prepend(navbar);
     setupNavbarToggle();
     console.log("Navbar adicionada ao DOM");
 

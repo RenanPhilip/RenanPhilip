@@ -7,7 +7,7 @@ async function loadNavbar() {
     if (!navbar_html.ok) throw new Error(`Erro HTTP: ${navbar_html.status}`);
     const html = await navbar_html.text();
 
-    const navbar = document.createElement("div");
+    const navbar = document.createElement("header");
     navbar.innerHTML = html;
 
     // Ignora carregamento da navbar caso ja exista

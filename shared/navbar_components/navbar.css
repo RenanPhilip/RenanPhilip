@@ -145,17 +145,12 @@ body {
 }
 
 /* ---------- Espaçamento do Body ---------- */
-/* Força o próximo elemento após navbar a ficar embaixo e ocupar o resto do espaço */
+/* Força o próximo elemento após navbar a ficar embaixo sem alterar seus estilos internos */
 #navbar-header + *,
 .navbar-header + * {
   margin-top: 0 !important;
   padding: 20px;
-  flex: 1;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
 }
 
 /* -------------- Fim da navbar -------------- */

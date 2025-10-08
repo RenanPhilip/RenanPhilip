@@ -69,5 +69,6 @@ window.addEventListener("load", async () => {
 
   // Após a navbar ser carregada, executa o scroll
   var alvo = document.querySelector("#navbar-header").parentNode.children[1]
-alvo.scrollIntoView({ behavior: "smooth", block: "start" });
+  alvo.scrollIntoView({ behavior: "smooth", block: "start" });
 });
+

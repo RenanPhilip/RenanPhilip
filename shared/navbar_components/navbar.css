@@ -24,6 +24,9 @@ body {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
   width: 100%;
   position: relative;
+  /* Força a navbar a ocupar toda a linha */
+  float: none !important;
+  clear: both !important;
 }
 
 /* ---------- Logo ---------- */
@@ -132,6 +135,27 @@ body {
 /* ---------- Espaçamento do Body ---------- */
 body {
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Garante que o navbar-header ocupe linha inteira e empurre próximo elemento */
+#navbar-header,
+.navbar-header {
+  display: flex;
+  order: -1;
+}
+
+/* Força o próximo elemento após navbar a ficar embaixo */
+#navbar-header + *,
+.navbar-header + * {
+  margin-top: 0;
+  clear: both;
+}
+
+/* Alternativa: aplica margin-top em todos os filhos diretos do body exceto navbar */
+body > *:not(#navbar-header):not(.navbar-header) {
+  clear: both;
 }
 
 /* -------------- Fim da navbar -------------- */

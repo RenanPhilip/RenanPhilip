@@ -1,7 +1,7 @@
 async function loadNavbar() {
   try {
-    const basePath = "https://renanphilip.github.io/RenanPhilip/shared/navbar_components/";
-    console.log('location href navbar.js: ',document.location.href)
+    const basePath = "/RenanPhilip/shared/navbar_components/";
+    console.log('location href navbar.js: ', basePath);
 
     // Busca HTML
     const navbar_html = await fetch(`${basePath}navbar.html`);
@@ -13,8 +13,8 @@ async function loadNavbar() {
     navbar.id = "navbar-header"; 
     navbar.className = "navbar-header ";
 
-    // Ignora carregamento da navbar caso ja exista
-    const existingNavbar = document.querySelector("#navbar")
+    // Ignora carregamento da navbar caso já exista
+    const existingNavbar = document.querySelector("#navbar");
     if (existingNavbar) {
       console.warn("Navbar já existente, ignorando duplicação");
       return;
@@ -23,7 +23,7 @@ async function loadNavbar() {
     // Injeta navbar carregada
     document.body.prepend(navbar);
 
-    // Injeta CSS caso ainda nao exista
+    // Injeta CSS caso ainda não exista
     if (!document.getElementById("navbar-css")) {
       const css_link = document.createElement("link");
       css_link.rel = "stylesheet";
@@ -32,11 +32,9 @@ async function loadNavbar() {
       document.head.appendChild(css_link);
     }
 
-    // Adiciona ao DOM
-    // document.body.prepend(navbar);
+    // Configura o toggle da navbar
     setupNavbarToggle();
     console.log("Navbar adicionada ao DOM");
-
   } catch (err) {
     console.error("Erro ao carregar navbar:", err);
   }
@@ -54,8 +52,8 @@ function setupNavbarToggle() {
 
   document.addEventListener("click", (e) => {
     if (menu.classList.contains("show") &&
-      !menu.contains(e.target) &&
-      !toggle.contains(e.target)) {
+        !menu.contains(e.target) &&
+        !toggle.contains(e.target)) {
       menu.classList.remove("show");
     }
   });
@@ -65,6 +63,11 @@ function setupNavbarToggle() {
   });
 }
 
-window.addEventListener("load", () => {
-  loadNavbar();
+window.addEventListener("load", async () => {
+  // Espera a conclusão completa de loadNavbar()
+  await loadNavbar();
+
+  // Após a navbar ser carregada, executa o scroll
+  var alvo = document.querySelector("#navbar-header").parentNode.children[1]
+alvo.scrollIntoView({ behavior: "smooth", block: "start" });
 });

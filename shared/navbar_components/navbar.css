@@ -1,23 +1,15 @@
 /* ---------- Reset ---------- */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 html,
 body {
   height: 100%;
+  width: 100%;
   margin: 0;
   padding: 0;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  padding: 0;
-  margin: 0;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 /* ---------- Container Principal da Navbar ---------- */
@@ -31,14 +23,15 @@ body {
   background: #1e293b;
   border-radius: 0;
   margin: 0;
-  margin-bottom: 0;
+  margin-top: 0 !important;
+  padding-top: 14px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
   width: 100%;
+  
+  /* Navbar estática - rola normalmente com a página */
   position: relative;
-  /* Força a navbar a ocupar toda a linha */
-  float: none !important;
-  clear: both !important;
-  flex-shrink: 0;
+  top: 0;
+  z-index: 10000;
 }
 
 /* ---------- Logo ---------- */
@@ -99,7 +92,7 @@ body {
   font-size: 1.5rem;
   cursor: pointer;
   position: relative;
-  z-index: 10000;
+  z-index: 10001;
   padding: 6px;
   border-radius: 8px;
 }
@@ -114,7 +107,7 @@ body {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 90px;
+    top: 70px;
     right: 0;
     width: 100%;
     max-width: 220px;
@@ -122,7 +115,7 @@ body {
     border-radius: 12px;
     background: #1e293b;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
-    z-index: 9990;
+    z-index: 9999;
   }
 
   .navbar-menu.show {
@@ -144,13 +137,11 @@ body {
   }
 }
 
-/* ---------- Espaçamento do Body ---------- */
-/* Força o próximo elemento após navbar a ficar embaixo sem alterar seus estilos internos */
-#navbar-header + *,
-.navbar-header + * {
-  margin-top: 0 !important;
-  padding: 20px;
-  width: 100%;
+/* ---------- Espaçamento para compensar a navbar ---------- */
+/* Pequeno espaço após a navbar */
+#navbar-header,
+.navbar-header {
+  margin-bottom: 10px;
 }
 
 /* -------------- Fim da navbar -------------- */

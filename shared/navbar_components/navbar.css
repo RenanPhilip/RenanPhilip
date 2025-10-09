@@ -41,7 +41,7 @@ body {
   /* Navbar estática - rola normalmente com a página */
   position: var(--navbar-position); /*PRESTAR ATENÇÃO NISSO AUQI*/
   top: 0;
-  z-index: 10000;
+  /* z-index: 10000; */
 }
 
 /* ---------- Logo ---------- */
@@ -102,7 +102,7 @@ body {
   font-size: 1.5rem;
   cursor: pointer;
   position: relative;
-  z-index: 10001;
+  /* z-index: 10001; */
   padding: 6px;
   border-radius: 8px;
 }

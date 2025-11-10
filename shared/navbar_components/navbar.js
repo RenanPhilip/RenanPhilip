@@ -1,7 +1,7 @@
 async function loadNavbar() {
   try {
     const basePath = "/RenanPhilip/shared/navbar_components/";
-    console.log('location href navbar.js: ', basePath);
+    // console.log('location href navbar.js: ', basePath);
 
     // Busca HTML
     const navbar_html = await fetch(`${basePath}navbar.html`);
@@ -16,7 +16,7 @@ async function loadNavbar() {
     // Ignora carregamento da navbar caso já exista
     const existingNavbar = document.querySelector("#navbar");
     if (existingNavbar) {
-      console.warn("Navbar já existente, ignorando duplicação");
+      // console.warn("Navbar já existente, ignorando duplicação");
       return;
     }
 
@@ -34,7 +34,7 @@ async function loadNavbar() {
 
     // Configura o toggle da navbar
     setupNavbarToggle();
-    console.log("Navbar adicionada ao DOM");
+    // console.log("Navbar adicionada ao DOM");
   } catch (err) {
     console.error("Erro ao carregar navbar:", err);
   }

@@ -35,6 +35,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add shared/navbar_components/*.svg
+          git add shared/stats_card/*.svg
           git commit -m "Update GitHub stats cards" || exit 0
           git push

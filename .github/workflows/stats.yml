@@ -19,7 +19,7 @@ jobs:
         uses: readme-tools/github-readme-stats-action@v1
         with:
           card: stats
-          options: username=RenanPhilip&show_icons=true&theme=tokyonight&card_width=400
+          options: username=RenanPhilip&layout=compact&langs_count=6&theme=tokyonight
           # options: username=RenanPhilip&show_icons=true&theme=tokyonight&locale=pt-br
           
           path: shared/stats_card/github_stats.svg
@@ -29,7 +29,7 @@ jobs:
         uses: readme-tools/github-readme-stats-action@v1
         with:
           card: top-langs
-          options: username=RenanPhilip&show_icons=true&theme=tokyonight&card_width=400
+          options: username=RenanPhilip&layout=compact&langs_count=6&theme=tokyonight
           # options: username=RenanPhilip&layout=compact&langs_count=6&theme=tokyonight&locale=pt-br
           path: shared/stats_card/top_languages.svg
           token: ${{ secrets.GITHUB_TOKEN }}

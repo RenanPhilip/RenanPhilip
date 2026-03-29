@@ -35,7 +35,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git pull --rebase || true
           git add shared/stats_card/*.svg
-          git commit -m "Update GitHub stats cards" || exit 0
-          git pull --rebase
-          git push
+          git commit -m "Update GitHub stats cards" || echo "no changes"
+          git push || git push --force-with-lease

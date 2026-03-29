@@ -20,6 +20,8 @@ jobs:
         with:
           card: stats
           options: username=RenanPhilip&show_icons=true&theme=tokyonight
+          # options: username=RenanPhilip&show_icons=true&theme=tokyonight&locale=pt-br
+          
           path: shared/stats_card/github_stats.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -28,6 +30,7 @@ jobs:
         with:
           card: top-langs
           options: username=RenanPhilip&layout=compact&langs_count=6&theme=tokyonight
+          # options: username=RenanPhilip&layout=compact&langs_count=6&theme=tokyonight&locale=pt-br
           path: shared/stats_card/top_languages.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 

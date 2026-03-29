@@ -10,14 +10,13 @@ Minha experiência inclui liderar migrações para GA4, padronizar arquiteturas 
     alt="GitHub Stats" 
     height="200" 
     style="padding-right: 10px;" 
-    src="https://github-readme-stats.vercel.app/api?username=RenanPhilip&show_icons=true&theme=tokyonight&locale=pt-br" 
-  />
+    src="https://renanphilip.github.io/RenanPhilip/shared/stats_card/github_stats.svg"
 
 <img 
       align="rigth" 
       alt="GitHub Stats" 
       height="200" 
-      src="https://github-readme-stats.vercel.app/api/top-langs/?username=RenanPhilip&theme=tokyonight&layout=compact&custom_title=Tecnologias&langs_count=9" 
+      src="https://renanphilip.github.io/RenanPhilip/shared/stats_card/top_languages.svg"
   />
 
 </p>  

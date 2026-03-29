@@ -13,7 +13,7 @@ Minha experiência inclui liderar migrações para GA4, padronizar arquiteturas 
     src="https://renanphilip.github.io/RenanPhilip/shared/stats_card/github_stats.svg"
 
 <img 
-      align="rigth" 
+      align="right" 
       alt="GitHub Stats" 
       height="200" 
       src="https://renanphilip.github.io/RenanPhilip/shared/stats_card/top_languages.svg"

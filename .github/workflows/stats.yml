@@ -27,8 +27,8 @@ jobs:
         uses: readme-tools/github-readme-stats-action@v1
         with:
           card: top-langs
-          options: username=RenanPhilip&layout=compact&langs_count=8&theme=tokyonight
-          path: shared/stats_card/github_stats.svg
+          options: username=RenanPhilip&layout=compact&langs_count=6&theme=tokyonight
+          path: shared/stats_card/top_languages.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Commit cards

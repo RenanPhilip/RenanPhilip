@@ -4,18 +4,21 @@ Minha experiência inclui liderar migrações para GA4, padronizar arquiteturas 
 
 ### 📊 Estatísticas
 
-<p align="center">
+<p> 
   <img 
-    width="415"
-    src="https://renanphilip.github.io/RenanPhilip/shared/stats_card/github_stats.svg"
-  />
+    align="left" 
+    alt="GitHub Stats" 
+    height="200" 
+    style="padding-right: 10px;"   
+    src="https://renanphilip.github.io/RenanPhilip/shared/stats_card/github_stats.svg" 
+  /> 
   <img 
-    width="370"
-    src="https://renanphilip.github.io/RenanPhilip/shared/stats_card/top_languages.svg"
-  />
+    align="rigth" 
+    alt="GitHub Stats" 
+    height="200" 
+    src="https://renanphilip.github.io/RenanPhilip/shared/stats_card/top_languages.svg" 
+  /> 
 </p>
-
-</p>  
 
 <br><br>  
 ## Especialista em Web Analytics & Data Tracking <br> Google Tag Manager (GTM) | GA4 | BI | Automação & Data Layer

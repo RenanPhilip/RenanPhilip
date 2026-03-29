@@ -20,7 +20,7 @@ jobs:
         with:
           card: stats
           options: username=RenanPhilip&show_icons=true&theme=tokyonight
-          path: shared/navbar_components/github_stats.svg
+          path: shared/stats_card/github_stats.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Generate top languages card
@@ -28,7 +28,7 @@ jobs:
         with:
           card: top-langs
           options: username=RenanPhilip&layout=compact&langs_count=8&theme=tokyonight
-          path: shared/navbar_components/top_languages.svg
+          path: shared/stats_card/github_stats.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Commit cards
